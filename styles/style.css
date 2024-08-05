@@ -1,0 +1,257 @@
+/*  FUENTES  */
+@font-face {
+    font-family: "cera-round-regular";
+    src: url(../fonts/cera-round-pro/Demo_fonts/Fontspring-DEMO-ceraroundpro-regular.otf);
+}
+@font-face {
+    font-family: "cera-round-black";
+    src: url(../fonts/cera-round-pro/Demo_fonts/Fontspring-DEMO-ceraroundpro-black.otf);
+}
+@font-face {
+    font-family: "junegull";
+    src: url(../fonts/junegull/junegull.ttf);
+}
+@font-face {
+    font-family: "varela-round";
+    src: url(../fonts/Varela_Round/VarelaRound-Regular.ttf);
+}
+
+/*  ESTILOS  */
+
+body {
+    font-size: 16px;
+    font-family: "varela-round";
+    margin: 0px;
+    background-color: #3f220f;
+}
+
+a{
+    text-decoration: none;
+}
+
+input{
+    font-family: "varela-round";
+}
+
+textarea{
+    font-family: "varela-round";
+}
+
+.titulo {
+    text-align: center;
+}
+
+/*  HEADER  */
+.nav-bar{
+    /*background-color: #1d1d1d;*/
+    background-color: #ffe2c2;
+    margin: 0px;
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+}
+
+.logo-nombre{
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+img.logo-navbar {
+    width: 50px;
+    height: auto;
+}
+
+.nombre-navbar {
+    margin-left: 0.5em;
+    font-weight: bold;
+}
+
+ul.navegation {
+    list-style-type: none;
+    padding: 0px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+}
+
+.navegation li {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.nav-bar a{
+    color: #000000;
+    text-decoration: none;
+}
+
+/*  MAIN  */
+.main{
+    background-color: #3f220f;
+    font-family: "varela-round";
+    color: #ffe2c2;
+    margin: 0px;
+    padding: 0.5em;
+}
+
+.main-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+}
+
+.main-text{
+    padding: 0px 2em 0px 2em;
+}
+
+.main h1{
+    font-family: "varela-round";
+    margin: .6em 0 .6em 0;
+}
+
+.whatsapp-icon{
+    align-items: right;
+}
+
+/*  FOOTER  */
+.footer{
+    background-color: #ffe2c2;
+    margin: 0px;
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.seguinos-container{
+    text-align: center;
+}
+
+.contacto-container{
+    text-align: center;
+}
+
+.logo-footer-container{
+    display: flex;
+    align-items: center;
+}
+
+img.logo-footer {
+    width: 100px;
+    height: auto;
+}
+
+
+
+/*  INDEX  */
+.imagen-principal{
+    width: auto;
+    height: 500px;
+}
+
+
+/*  NOSOTROS  */
+.nosotros{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: max-content 1fr;
+    grid-template-areas: 
+    "titulo titulo titulo"
+    "caja1 caja2 caja3";
+    justify-items: center;
+}
+
+.nosotros h1{
+    grid-area: titulo;
+}
+#caja1{
+    grid-area: caja1;
+}
+#caja2{
+    grid-area: caja2;
+}
+#caja3{
+    grid-area: caja3;
+}
+
+.nosotros h2{
+    margin: .5em 0 .5em 0;
+}
+
+.nosotros-caja{
+    width: 90%;
+    border: #ffe2c2 1px solid;
+    padding: 0.5em;
+    margin: 0.5em;
+    background-color: #2f1c10;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.nosotros-caja p{
+    margin: auto;
+}
+
+@media only screen and (max-width: 900px) {
+    .nosotros{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr 1fr 1fr;
+        grid-template-areas: 
+        "titulo"
+        "caja1"
+        "caja2"
+        "caja3";
+    }
+}
+/*  PRODUCTOS  */
+.productos-grilla{
+    padding: 20px;
+    text-align: center;
+}
+
+.producto-caja {
+    /*width: -moz-fit-content;
+    width: fit-content;
+    padding: 0.5em;
+    margin: 10px 10px 10px 10px;*/
+    background-color: #2f1c10;
+}
+
+.producto-caja a{
+    color: #ffe2c2;
+    text-decoration: none;
+}
+
+.producto-caja h2{
+    font-size: 1.6em;
+    margin: .5em;
+}
+
+.productos-img{
+    width: 80%;
+    margin-top: .5em;
+}
+
+/*  CONTACTO  */
+.campos-contacto{
+    padding: 20px 10%;
+    /*text-align: center;*/
+}
+
+.mapa-container{
+    display: flex;
+    justify-content: center;
+    margin: 0.5em 0 0.5em 0;
+}
+
+
+/*  INFO-PRODUCTOS  */
+.info-productos{
+    padding: 20px;
+}
+
+.info-nutricional{
+    margin-top: 5px;
+}
