@@ -51,6 +51,11 @@ textarea{
     align-items: center;
 }
 
+.navbar{
+    padding: 0;
+    background-color: #ffe2c2;
+}
+
 .logo-nombre{
     display: flex;
     align-items: center;

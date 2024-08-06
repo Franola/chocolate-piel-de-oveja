@@ -12,19 +12,47 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header class="nav-bar">
+    <header class="">
+        <!--
         <div class="logo-nombre">
             <img class="logo-navbar" src="images/logo-nuevo.png" alt="Logo Chocolate Piel de Oveja">
             <span class="nombre-navbar">Chocolate Piel de Oveja</span>
         </div>
-
         <nav>
             <ul class="navegation">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="pages/inicio.html">Inicio</a></li>
+                <li><a href="pages/nosotros.html">Nosotros</a></li>
                 <li><a href="pages/productos.html">Productos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="pages/contacto.html">Contacto</a></li>
             </ul>
+        </nav>
+        -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo-nuevo.png" alt="Logo" class="d-inline-block align-text-center logo-navbar">
+                    Chocolate Piel de Oveja
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/nosotros.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -45,83 +73,6 @@
             </div>
         </div>
 
-        <!-------------- NOSOTROS -------------->
-        <section class="nosotros" id="nosotros">
-            <h1 class="titulo">Nosotros</h1>
-
-            <diV class="nosotros-caja" id="caja1">
-                <h2>Quienes somos</h2>
-                <p>
-                    En Chocolate Piel de Oveja, nos apasiona el cacao puro y natural. Creamos chocolates artesanales con un 80%, 90% y 100% de cacao, usando solo ingredientes como manteca de cacao, cacao y miel orgánica. Nuestro compromiso es ofrecer chocolates sin aditivos ni conservantes, conservando el sabor auténtico y las propiedades naturales del cacao.
-
-                    Nos enorgullece compartir con ustedes chocolates que son el resultado de un proceso artesanal y de un profundo respeto por la naturaleza. En cada bocado, descubrirás la esencia de nuestro trabajo: calidad, pureza y amor por el verdadero chocolate.
-                </p>
-            </diV>
-
-            <diV class="nosotros-caja" id="caja2">
-                <h2>Materia prima</h2>
-                <p>
-                    En Chocolate Piel de Oveja, nos enorgullece utilizar materia prima de la más alta calidad, cuidadosamente seleccionada desde su origen. Nuestro cacao proviene de pequeñas fincas sostenibles, donde se cultiva de manera ecológica y respetuosa con el medio ambiente. Cada grano de cacao es tratado con el máximo cuidado para garantizar un sabor y una calidad inigualables.
-
-                    La manteca de cacao que utilizamos es pura y natural, sin procesos químicos que alteren su esencia. Además, endulzamos nuestros chocolates con miel orgánica, un ingrediente que no solo aporta dulzura natural sino también propiedades nutritivas. Esta combinación de ingredientes puros y naturales es lo que hace que nuestros chocolates sean únicos y llenos de sabor.
-                </p>
-            </diV>
-
-            <diV class="nosotros-caja" id="caja3">
-                <h2>Envíos</h2>
-                <p>
-                    En Chocolate Piel de Oveja, nos comprometemos a entregar nuestros chocolates artesanales con la misma calidad con la que los elaboramos. Realizamos envíos a todo el país, utilizando embalajes especiales que protegen el producto y mantienen su frescura. Cada pedido es cuidadosamente empacado para asegurar que tus chocolates lleguen en perfectas condiciones, listos para ser disfrutados. Además, ofrecemos opciones de envío rápido para aquellos momentos en los que necesitas un regalo especial con urgencia.
-                </p>
-            </diV>
-        </section>
-
-        <div class="mapa-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d821.1508492283965!2d-58.54440676676623!3d-34.46933824168207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb00360a19c39%3A0xfeaf3a05de14914e!2sJos%C3%A9%20Ingenieros%201765%2C%20B1643FQG%20B%C3%A9ccar%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1722378500524!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-
-        <!-------------- CONTACTO -------------->
-        <div class="contacto" id="contacto"></div>
-            <h1 class="titulo">Dejanos un mensaje</h1>
-
-            <div class="campos-contacto">
-                <form method="post" class="row gx-4 gy-3">
-
-                    
-                    <div class="col-md-6">
-                        <label class="form-label">Nombre</label>
-                        <input class="form-control" type="text" name="nombre" placeholder="Nombre">
-                    </div>
-                
-                    <div class="col-md-6">
-                        <label class="form-label">Apellido</label>
-                        <input class="form-control" type="text" name="apellido" placeholder="Apellido">
-                    </div>
-                
-                    
-                
-                    <div class="col-md-6">
-                        <label class="form-label">Email</label>
-                        <input class="form-control" type="text" name="email" placeholder="Email">
-                    </div>
-                        
-                    <div class="col-md-6">
-                        <label class="form-label">Teléfono</label>
-                        <input class="form-control" type="text" name="telefono" placeholder="Telefono">
-                    </div>
-                
-                    
-                    <div class="col-12">
-                        <label class="form-label">Mensaje</label>
-                        <textarea class="form-control" name="mensaje" placeholder="Escribe tu mensaje"></textarea>
-                    </div>
-
-                    <div class="col-12">
-                        <input class="btn btn-primary" type="submit" value="Enviar">
-                    </div>
-                    
-                </form>
-            </div>
-        </div>
         
         <img class="whatsapp-icon" src="images/icon-whatsapp-light.png" alt="Logo Whatsapp">
     </main>
