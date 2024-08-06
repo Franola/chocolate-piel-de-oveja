@@ -107,6 +107,16 @@ ul.navegation {
     text-decoration: none;
 }
 
+@media only screen and (max-width: 380px) {
+    .navbar-brand{
+        font-size: 1rem;
+    }
+    img.logo-navbar {
+        width: 40px;
+        height: auto;
+    }
+}
+
 /*  MAIN  */
 .main{
     background-color: #3f220f;
@@ -133,8 +143,20 @@ ul.navegation {
 }
 
 .whatsapp-icon{
+    position: sticky;
+    bottom: 20px;
+    left: 100%;
     align-items: right;
+    margin: 10px;
 }
+
+@media only screen and (max-width: 600px) {
+    .whatsapp-icon{
+        bottom: 10px;
+        margin: 10px 2px;
+    }
+}
+
 
 /*  FOOTER  */
 .footer{
@@ -277,10 +299,12 @@ img.logo-footer {
 
 }
 
+/*
 .campos-contacto{
-    /*padding: 20px 10%;*/
-    /*text-align: center;*/
+    padding: 20px 10%;
+    text-align: center;
 }
+*/
 
 .mapa-container{
     display: flex;
