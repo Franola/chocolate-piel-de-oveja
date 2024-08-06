@@ -61,48 +61,50 @@
     <main class="main">
         <h1 class="titulo">Contacto</h1>
 
-        <div class="mapa-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d821.1508492283965!2d-58.54440676676623!3d-34.46933824168207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb00360a19c39%3A0xfeaf3a05de14914e!2sJos%C3%A9%20Ingenieros%201765%2C%20B1643FQG%20B%C3%A9ccar%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1722378500524!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+        <section class="contacto row mx-4">
+            <div class="campos-contacto col-md-6 my-auto">
+                <form method="post" class="row gx-4 gy-3">
 
-        <div class="campos-contacto">
-            <form method="post" class="row gx-4 gy-3">
-
-                
-                <div class="col-md-6">
-                    <label class="form-label">Nombre</label>
-                    <input class="form-control" type="text" name="nombre" placeholder="Nombre">
-                </div>
-            
-                <div class="col-md-6">
-                    <label class="form-label">Apellido</label>
-                    <input class="form-control" type="text" name="apellido" placeholder="Apellido">
-                </div>
-            
-                
-            
-                <div class="col-md-6">
-                    <label class="form-label">Email</label>
-                    <input class="form-control" type="text" name="email" placeholder="Email">
-                </div>
                     
-                <div class="col-md-6">
-                    <label class="form-label">Teléfono</label>
-                    <input class="form-control" type="text" name="telefono" placeholder="Telefono">
-                </div>
-            
+                    <div class="col-lg-6">
+                        <label class="form-label">Nombre</label>
+                        <input class="form-control" type="text" name="nombre" placeholder="Nombre">
+                    </div>
                 
-                <div class="col-12">
-                    <label class="form-label">Mensaje</label>
-                    <textarea class="form-control" name="mensaje" placeholder="Escribe tu mensaje"></textarea>
-                </div>
+                    <div class="col-lg-6">
+                        <label class="form-label">Apellido</label>
+                        <input class="form-control" type="text" name="apellido" placeholder="Apellido">
+                    </div>
+                
+                    
+                
+                    <div class="col-lg-6">
+                        <label class="form-label">Email</label>
+                        <input class="form-control" type="text" name="email" placeholder="Email">
+                    </div>
+                        
+                    <div class="col-lg-6">
+                        <label class="form-label">Teléfono</label>
+                        <input class="form-control" type="text" name="telefono" placeholder="Telefono">
+                    </div>
+                
+                    
+                    <div class="col-12">
+                        <label class="form-label">Mensaje</label>
+                        <textarea class="form-control" name="mensaje" placeholder="Escribe tu mensaje"></textarea>
+                    </div>
 
-                <div class="col-12">
-                    <input class="btn btn-primary" type="submit" value="Enviar">
-                </div>
-                
-            </form>
-        </div>
+                    <div class="col-12 d-flex justify-content-center">
+                        <input class="btn btn-primary" type="submit" value="Enviar">
+                    </div>
+                    
+                </form>
+            </div>
+
+            <div class="mapa-container col-md-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d821.1508492283965!2d-58.54440676676623!3d-34.46933824168207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb00360a19c39%3A0xfeaf3a05de14914e!2sJos%C3%A9%20Ingenieros%201765%2C%20B1643FQG%20B%C3%A9ccar%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1722378500524!5m2!1ses-419!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
 
         <img class="whatsapp-icon" src="../images/icon-whatsapp-light.png" alt="Logo Whatsapp">
     </main>
