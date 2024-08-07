@@ -148,6 +148,13 @@ ul.navegation {
     left: 100%;
     align-items: right;
     margin: 10px;
+    background-color: #a25e2a;
+    border-radius: 12px;
+    padding: 7px;
+}
+
+.whatsapp-icon:hover {
+    background-color: #834f27;
 }
 
 @media only screen and (max-width: 600px) {
