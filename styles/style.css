@@ -203,10 +203,14 @@ img.logo-footer {
 /*  INDEX  */
 .imagen-principal{
     width: auto;
-    height: 500px;
+    height: 450px;
 }
 
-
+@media only screen and (max-width: 380px) {
+    .imagen-principal{
+        height: 350px;
+    }
+}
 /*  NOSOTROS  */
 .nosotros{
     display: grid;
