@@ -1,18 +1,18 @@
 body {
 	font-size: 16px;
-	font-family: "varela-round";
+	font-family: $font-principal;
 	margin: 0px;
-	background-color: #3f220f;
+	background-color: $color-primario;
 }
 
 main {
-	background-color: #3f220f;
-	font-family: "varela-round";
-	color: #ffe2c2;
+	background-color: $color-primario;
+	font-family: $font-principal;
+	color: $color-secundario;
 	margin: 0px;
 	padding: 0.5em;
 	h1 {
-		font-family: "varela-round";
+		font-family: $font-principal;
 		margin: .6em 0 .6em 0;
 	}
 }
@@ -57,9 +57,9 @@ a {
 }
 
 input {
-	font-family: "varela-round";
+	font-family: $font-principal;
 }
 
 textarea {
-	font-family: "varela-round";
+	font-family: $font-principal;
 }

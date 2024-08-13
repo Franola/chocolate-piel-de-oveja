@@ -20,7 +20,10 @@
   margin: 0px;
   padding: 0.5em;
   display: flex;
+  flex-direction: inherit;
+  justify-content: inherit;
   align-items: center;
+  flex-wrap: inherit;
 }
 .nav-bar a {
   color: #000000;
@@ -34,7 +37,10 @@
 
 .logo-nombre {
   display: flex;
+  flex-direction: inherit;
+  justify-content: inherit;
   align-items: center;
+  flex-wrap: inherit;
   margin-right: auto;
 }
 
@@ -52,7 +58,10 @@ ul.navegation {
   list-style-type: none;
   padding: 0px;
   display: flex;
+  flex-direction: inherit;
   justify-content: space-around;
+  align-items: inherit;
+  flex-wrap: inherit;
   margin: 0;
 }
 
@@ -61,14 +70,12 @@ ul.navegation {
   margin-right: 0.5em;
 }
 
-.contacto {
-  display: flex;
-  justify-content: center;
-}
-
 .mapa-container {
   display: flex;
+  flex-direction: unset;
   justify-content: center;
+  align-items: unset;
+  flex-wrap: unset;
   margin: 0.5em 0 0.5em 0;
 }
 .mapa-container iframe {
@@ -129,6 +136,9 @@ ul.navegation {
   text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: inherit;
+  align-items: inherit;
+  flex-wrap: inherit;
 }
 .nosotros-caja p {
   margin: auto;
@@ -161,7 +171,10 @@ ul.navegation {
   margin: 0px;
   padding: 0.5em;
   display: flex;
+  flex-direction: inherit;
   justify-content: space-between;
+  align-items: inherit;
+  flex-wrap: inherit;
 }
 
 .seguinos-container {
@@ -174,7 +187,10 @@ ul.navegation {
 
 .logo-footer-container {
   display: flex;
+  flex-direction: inherit;
+  justify-content: inherit;
   align-items: center;
+  flex-wrap: inherit;
 }
 
 img.logo-footer {

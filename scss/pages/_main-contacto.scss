@@ -1,10 +1,7 @@
-.contacto {
-	display: flex;
-	justify-content: center;
-}
 .mapa-container {
-	display: flex;
-	justify-content: center;
+	//display: flex;
+	//justify-content: center;
+	@include flexbox(unset, center, unset, unset);
 	margin: 0.5em 0 0.5em 0;
 	iframe {
 		width: 100%;

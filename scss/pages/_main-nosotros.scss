@@ -22,14 +22,15 @@
 }
 .nosotros-caja {
 	width: 90%;
-	border: #ffe2c2 1px solid;
+	border: $color-secundario 1px solid;
 	padding: 0.5em;
 	margin: 0.5em;
 	background-color: #2f1c10;
 	border-radius: 5px;
 	text-align: center;
-	display: flex;
-	flex-direction: column;
+	//display: flex;
+	//flex-direction: column;
+	@include flexbox(column, inherit, inherit, inherit);
 	p {
 		margin: auto;
 	}
