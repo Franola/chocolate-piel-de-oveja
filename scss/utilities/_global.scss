@@ -1,0 +1,65 @@
+body {
+	font-size: 16px;
+	font-family: "varela-round";
+	margin: 0px;
+	background-color: #3f220f;
+}
+
+main {
+	background-color: #3f220f;
+	font-family: "varela-round";
+	color: #ffe2c2;
+	margin: 0px;
+	padding: 0.5em;
+	h1 {
+		font-family: "varela-round";
+		margin: .6em 0 .6em 0;
+	}
+}
+
+.titulo {
+	text-align: center;
+}
+
+.btn-primary {
+	--bs-btn-color: #3f220f;
+	--bs-btn-bg: #ffe2c2;
+	--bs-btn-border-color: #ffe2c2;
+	--bs-btn-hover-color: #3f220f;
+	--bs-btn-hover-bg: #c8b197;
+	--bs-btn-hover-border-color: #c8b197;
+	--bs-btn-focus-shadow-rgb: 49, 132, 253;
+	--bs-btn-active-color: #3f220f;
+	--bs-btn-active-bg: #c8b197;
+	--bs-btn-active-border-color: #c8b197;
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	--bs-btn-disabled-color: #3f220f;
+	--bs-btn-disabled-bg: #ffe2c2;
+	--bs-btn-disabled-border-color: #ffe2c2;
+}
+
+.whatsapp-icon {
+	position: sticky;
+	bottom: 20px;
+	left: 100%;
+	align-items: right;
+	margin: 10px;
+	background-color: #a25e2a;
+	border-radius: 12px;
+	padding: 7px;
+	&:hover {
+		background-color: #834f27;
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+input {
+	font-family: "varela-round";
+}
+
+textarea {
+	font-family: "varela-round";
+}

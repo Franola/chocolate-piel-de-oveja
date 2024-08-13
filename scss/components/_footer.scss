@@ -1,0 +1,25 @@
+.footer {
+	background-color: #ffe2c2;
+	margin: 0px;
+	padding: 0.5em;
+	display: flex;
+	justify-content: space-between;
+}
+
+.seguinos-container {
+	text-align: center;
+}
+
+.contacto-container {
+	text-align: center;
+}
+
+.logo-footer-container {
+	display: flex;
+	align-items: center;
+}
+
+img.logo-footer {
+	width: 100px;
+	height: auto;
+}

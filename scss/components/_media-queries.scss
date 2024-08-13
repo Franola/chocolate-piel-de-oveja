@@ -1,0 +1,40 @@
+@media only screen and (max-width: 380px) {
+	.navbar-brand {
+		font-size: 1rem;
+	}
+	img.logo-navbar {
+		width: 40px;
+		height: auto;
+	}
+	.imagen-principal {
+		height: 350px;
+	}
+}
+@media only screen and (max-width: 600px) {
+	.whatsapp-icon {
+		bottom: 10px;
+		margin: 10px 2px;
+	}
+	.mapa-container {
+		iframe {
+			height: 300px;
+		}
+	}
+}
+@media only screen and (max-width: 900px) {
+	.seguinos-container {
+		margin-bottom: 1rem;
+	}
+	.footer {
+		justify-content: center;
+		flex-direction: column;
+	}
+	.logo-footer-container {
+		justify-content: center;
+	}
+	.nosotros {
+		grid-template-columns: 1fr;
+		grid-template-rows: max-content 1fr 1fr 1fr;
+		grid-template-areas: "titulo" "caja1" "caja2" "caja3";
+	}
+}

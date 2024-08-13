@@ -1,0 +1,47 @@
+.nav-bar {
+	background-color: #ffe2c2;
+	margin: 0px;
+	padding: 0.5em;
+	display: flex;
+	align-items: center;
+	a {
+		color: #000000;
+		text-decoration: none;
+	}
+}
+
+.navbar {
+	padding: 0;
+	background-color: #ffe2c2;
+}
+
+.logo-nombre {
+	display: flex;
+	align-items: center;
+	margin-right: auto;
+}
+
+img.logo-navbar {
+	width: 50px;
+	height: auto;
+}
+
+.nombre-navbar {
+	margin-left: 0.5em;
+	font-weight: bold;
+}
+
+ul.navegation {
+	list-style-type: none;
+	padding: 0px;
+	display: flex;
+	justify-content: space-around;
+	margin: 0;
+}
+
+.navegation {
+	li {
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+	}
+}

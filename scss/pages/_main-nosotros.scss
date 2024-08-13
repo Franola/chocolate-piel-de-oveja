@@ -1,0 +1,36 @@
+.nosotros {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: max-content 1fr;
+	grid-template-areas: "titulo titulo titulo" "caja1 caja2 caja3";
+	justify-items: center;
+	h1 {
+		grid-area: titulo;
+	}
+	h2 {
+		margin: .5em 0 .5em 0;
+	}
+}
+#caja1 {
+	grid-area: caja1;
+}
+#caja2 {
+	grid-area: caja2;
+}
+#caja3 {
+	grid-area: caja3;
+}
+.nosotros-caja {
+	width: 90%;
+	border: #ffe2c2 1px solid;
+	padding: 0.5em;
+	margin: 0.5em;
+	background-color: #2f1c10;
+	border-radius: 5px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	p {
+		margin: auto;
+	}
+}

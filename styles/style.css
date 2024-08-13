@@ -1,346 +1,290 @@
 /*  FUENTES  */
 @font-face {
-    font-family: "cera-round-regular";
-    src: url(../fonts/cera-round-pro/Demo_fonts/Fontspring-DEMO-ceraroundpro-regular.otf);
+  font-family: "cera-round-regular";
+  src: url(../fonts/cera-round-pro/Demo_fonts/Fontspring-DEMO-ceraroundpro-regular.otf);
 }
 @font-face {
-    font-family: "cera-round-black";
-    src: url(../fonts/cera-round-pro/Demo_fonts/Fontspring-DEMO-ceraroundpro-black.otf);
+  font-family: "cera-round-black";
+  src: url(../fonts/cera-round-pro/Demo_fonts/Fontspring-DEMO-ceraroundpro-black.otf);
 }
 @font-face {
-    font-family: "junegull";
-    src: url(../fonts/junegull/junegull.ttf);
+  font-family: "junegull";
+  src: url(../fonts/junegull/junegull.ttf);
 }
 @font-face {
-    font-family: "varela-round";
-    src: url(../fonts/Varela_Round/VarelaRound-Regular.ttf);
+  font-family: "varela-round";
+  src: url(../fonts/Varela_Round/VarelaRound-Regular.ttf);
+}
+.nav-bar {
+  background-color: #ffe2c2;
+  margin: 0px;
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+}
+.nav-bar a {
+  color: #000000;
+  text-decoration: none;
 }
 
-/*  ESTILOS  */
-
-body {
-    font-size: 16px;
-    font-family: "varela-round";
-    margin: 0px;
-    background-color: #3f220f;
+.navbar {
+  padding: 0;
+  background-color: #ffe2c2;
 }
 
-a{
-    text-decoration: none;
-}
-
-input{
-    font-family: "varela-round";
-}
-
-textarea{
-    font-family: "varela-round";
-}
-
-.titulo {
-    text-align: center;
-}
-
-.btn-primary{
-    --bs-btn-color: #3f220f;
-    --bs-btn-bg: #ffe2c2;
-    --bs-btn-border-color: #ffe2c2;
-    --bs-btn-hover-color: #3f220f;
-    --bs-btn-hover-bg: #c8b197;
-    --bs-btn-hover-border-color: #c8b197;
-    --bs-btn-focus-shadow-rgb: 49, 132, 253;
-    --bs-btn-active-color: #3f220f;
-    --bs-btn-active-bg: #c8b197;
-    --bs-btn-active-border-color: #c8b197;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #3f220f;
-    --bs-btn-disabled-bg: #ffe2c2;
-    --bs-btn-disabled-border-color: #ffe2c2;
-}
-
-/*  HEADER  */
-.nav-bar{
-    /*background-color: #1d1d1d;*/
-    background-color: #ffe2c2;
-    margin: 0px;
-    padding: 0.5em;
-    display: flex;
-    align-items: center;
-}
-
-.navbar{
-    padding: 0;
-    background-color: #ffe2c2;
-}
-
-.logo-nombre{
-    display: flex;
-    align-items: center;
-    margin-right: auto;
+.logo-nombre {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
 }
 
 img.logo-navbar {
-    width: 50px;
-    height: auto;
+  width: 50px;
+  height: auto;
 }
 
 .nombre-navbar {
-    margin-left: 0.5em;
-    font-weight: bold;
+  margin-left: 0.5em;
+  font-weight: bold;
 }
 
 ul.navegation {
-    list-style-type: none;
-    padding: 0px;
-    display: flex;
-    justify-content: space-around;
-    margin: 0;
+  list-style-type: none;
+  padding: 0px;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
 }
 
 .navegation li {
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
-.nav-bar a{
-    color: #000000;
-    text-decoration: none;
+.contacto {
+  display: flex;
+  justify-content: center;
 }
 
-@media only screen and (max-width: 380px) {
-    .navbar-brand{
-        font-size: 1rem;
-    }
-    img.logo-navbar {
-        width: 40px;
-        height: auto;
-    }
+.mapa-container {
+  display: flex;
+  justify-content: center;
+  margin: 0.5em 0 0.5em 0;
+}
+.mapa-container iframe {
+  width: 100%;
+  height: 500px;
 }
 
-/*  MAIN  */
-.main{
-    background-color: #3f220f;
-    font-family: "varela-round";
-    color: #ffe2c2;
-    margin: 0px;
-    padding: 0.5em;
+.imagen-principal {
+  width: auto;
+  height: 450px;
 }
 
-.main-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    justify-items: center;
+.main-text {
+  padding: 0px 2em 0px 2em;
 }
 
-.main-text{
-    padding: 0px 2em 0px 2em;
+.info-productos {
+  padding: 20px;
 }
 
-.main h1{
-    font-family: "varela-round";
-    margin: .6em 0 .6em 0;
+.info-nutricional {
+  margin-top: 5px;
 }
 
-.whatsapp-icon{
-    position: sticky;
-    bottom: 20px;
-    left: 100%;
-    align-items: right;
-    margin: 10px;
-    background-color: #a25e2a;
-    border-radius: 12px;
-    padding: 7px;
+.nosotros {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: max-content 1fr;
+  grid-template-areas: "titulo titulo titulo" "caja1 caja2 caja3";
+  justify-items: center;
+}
+.nosotros h1 {
+  grid-area: titulo;
+}
+.nosotros h2 {
+  margin: 0.5em 0 0.5em 0;
 }
 
-.whatsapp-icon:hover {
-    background-color: #834f27;
+#caja1 {
+  grid-area: caja1;
 }
 
-@media only screen and (max-width: 600px) {
-    .whatsapp-icon{
-        bottom: 10px;
-        margin: 10px 2px;
-    }
+#caja2 {
+  grid-area: caja2;
 }
 
-
-/*  FOOTER  */
-.footer{
-    background-color: #ffe2c2;
-    margin: 0px;
-    padding: 0.5em;
-    display: flex;
-    justify-content: space-between;
+#caja3 {
+  grid-area: caja3;
 }
 
-.seguinos-container{
-    text-align: center;
+.nosotros-caja {
+  width: 90%;
+  border: #ffe2c2 1px solid;
+  padding: 0.5em;
+  margin: 0.5em;
+  background-color: #2f1c10;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.nosotros-caja p {
+  margin: auto;
 }
 
-.contacto-container{
-    text-align: center;
-}
-
-.logo-footer-container{
-    display: flex;
-    align-items: center;
-}
-
-img.logo-footer {
-    width: 100px;
-    height: auto;
-}
-
-@media only screen and (max-width: 900px) {
-    .seguinos-container {
-        margin-bottom: 1rem;
-    }
-
-    .footer{
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    .logo-footer-container{
-        justify-content: center;
-    }
-}
-
-/*  INDEX  */
-.imagen-principal{
-    width: auto;
-    height: 450px;
-}
-
-@media only screen and (max-width: 380px) {
-    .imagen-principal{
-        height: 350px;
-    }
-}
-/*  NOSOTROS  */
-.nosotros{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: max-content 1fr;
-    grid-template-areas: 
-    "titulo titulo titulo"
-    "caja1 caja2 caja3";
-    justify-items: center;
-}
-
-.nosotros h1{
-    grid-area: titulo;
-}
-#caja1{
-    grid-area: caja1;
-}
-#caja2{
-    grid-area: caja2;
-}
-#caja3{
-    grid-area: caja3;
-}
-
-.nosotros h2{
-    margin: .5em 0 .5em 0;
-}
-
-.nosotros-caja{
-    width: 90%;
-    border: #ffe2c2 1px solid;
-    padding: 0.5em;
-    margin: 0.5em;
-    background-color: #2f1c10;
-    border-radius: 5px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-}
-
-.nosotros-caja p{
-    margin: auto;
-}
-
-@media only screen and (max-width: 900px) {
-    .nosotros{
-        grid-template-columns: 1fr;
-        grid-template-rows: max-content 1fr 1fr 1fr;
-        grid-template-areas: 
-        "titulo"
-        "caja1"
-        "caja2"
-        "caja3";
-    }
-}
-
-/*  PRODUCTOS  */
-.productos-grilla{
-    padding: 20px;
-    text-align: center;
+.productos-grilla {
+  padding: 20px;
+  text-align: center;
 }
 
 .producto-caja {
-    /*width: -moz-fit-content;
-    width: fit-content;
-    padding: 0.5em;
-    margin: 10px 10px 10px 10px;*/
-    background-color: #2f1c10;
+  background-color: #2f1c10;
+}
+.producto-caja a {
+  color: #ffe2c2;
+  text-decoration: none;
+}
+.producto-caja h2 {
+  font-size: 1.6em;
+  margin: 0.5em;
 }
 
-.producto-caja a{
-    color: #ffe2c2;
-    text-decoration: none;
+.productos-img {
+  width: 80%;
+  margin-top: 0.5em;
 }
 
-.producto-caja h2{
-    font-size: 1.6em;
-    margin: .5em;
+.footer {
+  background-color: #ffe2c2;
+  margin: 0px;
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
 }
 
-.productos-img{
-    width: 80%;
-    margin-top: .5em;
+.seguinos-container {
+  text-align: center;
 }
 
-/*  CONTACTO  */
-.contacto{
-    display: flex;
-    justify-content: center;
-
+.contacto-container {
+  text-align: center;
 }
 
-/*
-.campos-contacto{
-    padding: 20px 10%;
-    text-align: center;
-}
-*/
-
-.mapa-container{
-    display: flex;
-    justify-content: center;
-    margin: 0.5em 0 0.5em 0;
-    /*padding: 0 10%;*/
+.logo-footer-container {
+  display: flex;
+  align-items: center;
 }
 
-.mapa-container iframe{
-    width: 100%;
-    height: 500px;
+img.logo-footer {
+  width: 100px;
+  height: auto;
 }
 
+body {
+  font-size: 16px;
+  font-family: "varela-round";
+  margin: 0px;
+  background-color: #3f220f;
+}
+
+main {
+  background-color: #3f220f;
+  font-family: "varela-round";
+  color: #ffe2c2;
+  margin: 0px;
+  padding: 0.5em;
+}
+main h1 {
+  font-family: "varela-round";
+  margin: 0.6em 0 0.6em 0;
+}
+
+.titulo {
+  text-align: center;
+}
+
+.btn-primary {
+  --bs-btn-color: #3f220f;
+  --bs-btn-bg: #ffe2c2;
+  --bs-btn-border-color: #ffe2c2;
+  --bs-btn-hover-color: #3f220f;
+  --bs-btn-hover-bg: #c8b197;
+  --bs-btn-hover-border-color: #c8b197;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #3f220f;
+  --bs-btn-active-bg: #c8b197;
+  --bs-btn-active-border-color: #c8b197;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #3f220f;
+  --bs-btn-disabled-bg: #ffe2c2;
+  --bs-btn-disabled-border-color: #ffe2c2;
+}
+
+.whatsapp-icon {
+  position: sticky;
+  bottom: 20px;
+  left: 100%;
+  align-items: right;
+  margin: 10px;
+  background-color: #a25e2a;
+  border-radius: 12px;
+  padding: 7px;
+}
+.whatsapp-icon:hover {
+  background-color: #834f27;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  font-family: "varela-round";
+}
+
+textarea {
+  font-family: "varela-round";
+}
+
+@media only screen and (max-width: 380px) {
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  img.logo-navbar {
+    width: 40px;
+    height: auto;
+  }
+  .imagen-principal {
+    height: 350px;
+  }
+}
 @media only screen and (max-width: 600px) {
-    .mapa-container iframe{
-        height: 300px;
-    }
+  .whatsapp-icon {
+    bottom: 10px;
+    margin: 10px 2px;
+  }
+  .mapa-container iframe {
+    height: 300px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .seguinos-container {
+    margin-bottom: 1rem;
+  }
+  .footer {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .logo-footer-container {
+    justify-content: center;
+  }
+  .nosotros {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr 1fr 1fr;
+    grid-template-areas: "titulo" "caja1" "caja2" "caja3";
+  }
 }
 
-
-/*  INFO-PRODUCTOS  */
-.info-productos{
-    padding: 20px;
-}
-
-.info-nutricional{
-    margin-top: 5px;
-}
+/*# sourceMappingURL=style.css.map */
