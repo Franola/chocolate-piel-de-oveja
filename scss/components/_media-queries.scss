@@ -38,3 +38,17 @@
 		grid-template-areas: "titulo" "caja1" "caja2" "caja3";
 	}
 }
+
+@media only screen and (max-width: 991px) {
+	.producto-caja {
+		h2 {
+			font-size: 1.2em;
+		}
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.producto-caja {
+		width: 70%;
+	}
+}

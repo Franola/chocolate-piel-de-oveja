@@ -151,6 +151,7 @@ ul.navegation {
 
 .producto-caja {
   background-color: #2f1c10;
+  border-radius: 7px;
 }
 .producto-caja a {
   color: #ffe2c2;
@@ -162,8 +163,9 @@ ul.navegation {
 }
 
 .productos-img {
-  width: 80%;
+  width: 70%;
   margin-top: 0.5em;
+  border-radius: 5px;
 }
 
 .footer {
@@ -209,6 +211,7 @@ main {
   background-color: #3f220f;
   font-family: "varela-round";
   color: #ffe2c2;
+  background-image: radial-gradient(circle, #3f220f, #4c2b15, #5a341b, #683e22, #764828);
   margin: 0px;
   padding: 0.5em;
 }
@@ -300,6 +303,16 @@ textarea {
     grid-template-columns: 1fr;
     grid-template-rows: max-content 1fr 1fr 1fr;
     grid-template-areas: "titulo" "caja1" "caja2" "caja3";
+  }
+}
+@media only screen and (max-width: 991px) {
+  .producto-caja h2 {
+    font-size: 1.2em;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .producto-caja {
+    width: 70%;
   }
 }
 
