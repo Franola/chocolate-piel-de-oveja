@@ -200,11 +200,16 @@ img.logo-footer {
   height: auto;
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
   font-size: 16px;
   font-family: "varela-round";
   margin: 0px;
   background-color: #3f220f;
+  overflow-x: clip;
 }
 
 main {
