@@ -62,7 +62,7 @@
         <section class="nosotros">
             <h1 class="titulo">Nosotros</h1>
 
-            <diV class="nosotros-caja" id="caja1">
+            <diV class="nosotros-caja" id="caja1" data-aos="fade-right">
                 <h2>Quienes somos</h2>
                 <p>
                     En Chocolate Piel de Oveja, nos apasiona el cacao puro y natural. Creamos chocolates artesanales con un 80%, 90% y 100% de cacao, usando solo ingredientes como manteca de cacao, cacao y miel orgánica. Nuestro compromiso es ofrecer chocolates sin aditivos ni conservantes, conservando el sabor auténtico y las propiedades naturales del cacao.
@@ -71,7 +71,7 @@
                 </p>
             </diV>
 
-            <diV class="nosotros-caja" id="caja2">
+            <diV class="nosotros-caja" id="caja2" data-aos="fade-up">
                 <h2>Materia prima</h2>
                 <p>
                     En Chocolate Piel de Oveja, nos enorgullece utilizar materia prima de la más alta calidad, cuidadosamente seleccionada desde su origen. Nuestro cacao proviene de pequeñas fincas sostenibles, donde se cultiva de manera ecológica y respetuosa con el medio ambiente. Cada grano de cacao es tratado con el máximo cuidado para garantizar un sabor y una calidad inigualables.
@@ -80,7 +80,7 @@
                 </p>
             </diV>
 
-            <diV class="nosotros-caja" id="caja3">
+            <diV class="nosotros-caja" id="caja3" data-aos="fade-left">
                 <h2>Envíos</h2>
                 <p>
                     En Chocolate Piel de Oveja, nos comprometemos a entregar nuestros chocolates artesanales con la misma calidad con la que los elaboramos. Realizamos envíos a todo el país, utilizando embalajes especiales que protegen el producto y mantienen su frescura. Cada pedido es cuidadosamente empacado para asegurar que tus chocolates lleguen en perfectas condiciones, listos para ser disfrutados. Además, ofrecemos opciones de envío rápido para aquellos momentos en los que necesitas un regalo especial con urgencia.
@@ -112,5 +112,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        let samt = 0;
+        window.addEventListener('scroll', function() {
+        samt <= 10 ? samt++ : AOS.refresh();
+        });
+    </script>
 </body>
 </html>
