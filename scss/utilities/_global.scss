@@ -51,11 +51,11 @@ main {
 	left: 100%;
 	align-items: right;
 	margin: 10px;
-	background-color: #a25e2a;
+	background-color: $color-icon-whatsapp;
 	border-radius: 12px;
 	padding: 7px;
 	&:hover {
-		background-color: #834f27;
+		background-color: $color-icon-whatsapp-hover;
 	}
 }
 

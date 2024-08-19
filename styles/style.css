@@ -84,12 +84,15 @@ ul.navegation {
 }
 
 .imagen-principal {
-  width: auto;
-  height: 450px;
+  height: auto;
 }
 
 .main-text {
   padding: 0px 2em 0px 2em;
+}
+
+.carousel {
+  width: 450px;
 }
 
 .info-productos {
@@ -291,8 +294,8 @@ textarea {
     width: 40px;
     height: auto;
   }
-  .imagen-principal {
-    height: 350px;
+  .carousel {
+    width: 350px;
   }
 }
 @media only screen and (max-width: 600px) {
