@@ -157,6 +157,13 @@ ul.navegation {
   background-color: #2f1c10;
   border-radius: 7px;
 }
+.producto-caja:hover {
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  transition-delay: 10ms;
+  transform: scale(1.2, 1.2);
+}
 .producto-caja a {
   color: #ffe2c2;
   text-decoration: none;

@@ -5,6 +5,13 @@
 .producto-caja {
 	background-color: $color-primario-oscuro;
 	border-radius: 7px;
+	&:hover {
+		transition-property: transform;
+		transition-duration: 0.3s;
+		transition-timing-function: ease-out;
+		transition-delay: 10ms;
+		transform: scale(1.2, 1.2);
+	}
 	a {
 		color: $color-secundario;
 		text-decoration: none;
