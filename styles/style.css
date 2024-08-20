@@ -103,6 +103,11 @@ ul.navegation {
   margin-top: 5px;
 }
 
+.imagen-principal-producto {
+  width: auto;
+  height: 450px;
+}
+
 .titulo-producto {
   text-align: center;
 }
@@ -293,6 +298,9 @@ textarea {
   img.logo-navbar {
     width: 40px;
     height: auto;
+  }
+  .imagen-principal-producto {
+    height: 350px;
   }
   .carousel {
     width: 350px;
