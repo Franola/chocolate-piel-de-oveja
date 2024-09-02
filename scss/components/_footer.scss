@@ -2,8 +2,6 @@
 	background-color: $color-secundario;
 	margin: 0px;
 	padding: 0.5em;
-	//display: flex;
-	//justify-content: space-between;
 	@include flexbox(inherit, space-between, inherit, inherit);
 }
 
@@ -16,8 +14,6 @@
 }
 
 .logo-footer-container {
-	//display: flex;
-	//align-items: center;
 	@include flexbox(inherit, inherit, center, inherit);
 }
 

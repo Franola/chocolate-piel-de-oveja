@@ -2,19 +2,10 @@ html {
     overflow-x: clip;
 }
 
-body {
-	font-size: 16px;
-	font-family: $font-principal;
-	margin: 0px;
-	background-color: $color-primario;
-    overflow-x: clip;
-}
-
 main {
 	background-color: $color-primario;
 	font-family: $font-principal;
 	color: $color-secundario;
-	//background-image: radial-gradient(circle, $color-primario, #482914, #522f19, #5b361d, #653d22);
 	background-image: radial-gradient(circle, #3f220f, #4c2b15, #5a341b, #683e22, #764828);
 	margin: 0px;
 	padding: 0.5em;

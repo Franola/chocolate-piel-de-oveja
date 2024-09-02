@@ -28,8 +28,6 @@
 	background-color: $color-primario-oscuro;
 	border-radius: 5px;
 	text-align: center;
-	//display: flex;
-	//flex-direction: column;
 	@include flexbox(column, inherit, inherit, inherit);
 	p {
 		margin: auto;

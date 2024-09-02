@@ -15,6 +15,14 @@
   font-family: "varela-round";
   src: url(../fonts/Varela_Round/VarelaRound-Regular.ttf);
 }
+body {
+  font-size: 16px;
+  font-family: "varela-round";
+  margin: 0px;
+  background-color: #3f220f;
+  overflow-x: clip;
+}
+
 .nav-bar {
   background-color: #ffe2c2;
   margin: 0px;
@@ -220,14 +228,6 @@ img.logo-footer {
 }
 
 html {
-  overflow-x: clip;
-}
-
-body {
-  font-size: 16px;
-  font-family: "varela-round";
-  margin: 0px;
-  background-color: #3f220f;
   overflow-x: clip;
 }
 

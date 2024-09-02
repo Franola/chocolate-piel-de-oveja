@@ -2,8 +2,6 @@
 	background-color: $color-secundario;
 	margin: 0px;
 	padding: 0.5em;
-	//display: flex;
-	//align-items: center;
 	@include flexbox(inherit, inherit, center, inherit);
 	a {
 		color: #000000;
@@ -17,8 +15,6 @@
 }
 
 .logo-nombre {
-	//display: flex;
-	//align-items: center;
 	@include flexbox(inherit, inherit, center, inherit);
 	margin-right: auto;
 }
@@ -36,8 +32,6 @@ img.logo-navbar {
 ul.navegation {
 	list-style-type: none;
 	padding: 0px;
-	//display: flex;
-	//justify-content: space-around;
 	@include flexbox(inherit, space-around, inherit, inherit);
 	margin: 0;
 }
