@@ -7,7 +7,7 @@
 		height: auto;
 	}
 	.imagen-principal-producto {
-		height: 350px;
+		height: 250px;
 	}
 	.carousel{
 		width: 350px;
@@ -53,5 +53,11 @@
 @media only screen and (max-width: 575px) {
 	.producto-caja {
 		width: 70%;
+	}
+}
+
+@media only screen and (max-width: 970px) and (min-width: 381px) {
+	.imagen-principal-producto {
+		height: 350px;
 	}
 }
