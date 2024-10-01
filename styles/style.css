@@ -248,6 +248,20 @@ main h1 {
   text-align: center;
 }
 
+.carrito-btn {
+  border: transparent;
+  background-color: transparent;
+}
+
+.carrito-img {
+  height: auto;
+  width: 40px;
+}
+
+.offcanvas {
+  background-color: #ffe2c2;
+}
+
 .btn-primary {
   --bs-btn-color: #3f220f;
   --bs-btn-bg: #ffe2c2;
@@ -335,6 +349,9 @@ textarea {
 @media only screen and (max-width: 991px) {
   .producto-caja h2 {
     font-size: 1.2em;
+  }
+  .carrito-btn {
+    display: none;
   }
 }
 @media only screen and (max-width: 575px) {

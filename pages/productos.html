@@ -48,13 +48,27 @@
                         <li class="nav-item">
                             <a class="nav-link" href="contacto.html">Contacto</a>
                         </li>
+                        
                     </ul>
                 </div>
+                <button class="btn btn-primary carrito-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <img class="carrito-img" src="../images/icon-carrito.png" alt="Carrito de compras">
+                </button>
             </div>
         </nav>
     </header>
 
     <main class="main">
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h4 class="offcanvas-title" id="offcanvasExampleLabel">Carrito</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                
+            </div>
+        </div>
+        
         <h1 class="titulo">Productos</h1>
 
         <div class="productos-grilla container">

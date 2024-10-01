@@ -19,6 +19,20 @@ main {
 	text-align: center;
 }
 
+.carrito-btn {
+	border: transparent;
+	background-color: transparent;
+}
+
+.carrito-img {
+	height: auto;
+	width: 40px;
+}
+
+.offcanvas {
+	background-color: $color-secundario;
+}
+
 .btn-primary {
 	--bs-btn-color: #3f220f;
 	--bs-btn-bg: #ffe2c2;
