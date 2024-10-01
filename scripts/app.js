@@ -1,11 +1,52 @@
 class Producto {
+    #id = null
+    #nombre = null
+    #precio = null
+    #cantidad = null
+    #ingredientes = []
+
     constructor(id, nombre, precio, cantidad, ingredientes) {
-        this.id = parseInt(id);
-        this.nombre = nombre;
-        this.precio = parseFloat(precio).toFixed(2);
-        this.cantidad = parseInt(cantidad);
-        this.ingredientes = ingredientes;
+        this.#id = parseInt(id);
+        this.#nombre = nombre;
+        this.#precio = parseFloat(precio).toFixed(2);
+        this.#cantidad = parseInt(cantidad);
+        this.#ingredientes = ingredientes;
     }
+
+    //Setters
+    set id(id) {
+        this.#id = parseInt(id);
+    }
+    set nombre(nombre) {
+        this.#nombre = nombre;
+    }
+    set precio(precio) { 
+        this.#precio = parseFloat(precio).toFixed(2);
+    }
+    set cantidad(cantidad) {
+        this.#cantidad = parseInt(cantidad);
+    }
+    set ingredientes(ingredientes) {
+        this.#ingredientes = ingredientes;
+    }
+
+    // Getters
+    get id() {
+        return this.#id;
+    }
+    get nombre() {
+        return this.#nombre;
+    }
+    get precio() {
+        return this.#precio;
+    }
+    get cantidad() {
+        return this.#cantidad;
+    }
+    get ingredientes() {
+        return this.#ingredientes;
+    }
+
 }
 
 const productos = [];
