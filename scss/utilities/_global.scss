@@ -33,6 +33,72 @@ main {
 	background-color: $color-secundario;
 }
 
+.carrito-lista{
+	background-color: #ffe2c2;
+	width: 100%;
+    height: 100%;
+	overflow-y: auto;
+}
+
+.carrito-item{
+	background-color: #ffe2c2;
+	width: 100%;
+    height: fit-content;
+	padding: 10px;
+	border-top: solid 1px;
+}
+
+.carrito-item-img{
+	height: auto;
+	width: 100px;
+}
+
+.carrito-item-titulo{
+
+}
+
+.carrito-item-botones > button{
+	width: 28px;
+	height: 28px;
+	padding: 3px;
+}
+.carrito-item-botones > button > img{
+	height: 18px;
+	width: auto;
+}
+
+.carrito-eliminar-btn{
+	margin-right: 0.5rem;
+}
+.basura-img{
+}
+
+.carrito-menos-btn{
+	
+}
+.menos-img{
+}
+
+.carrito-item-cantidad{
+	margin-right: 0.25rem;
+    margin-left: 0.25rem;
+}
+
+.carrito-mas-btn{
+	
+}
+.mas-img{
+}
+
+.carrito-item-precio{
+
+}
+
+.carrito-footer{
+	height: fit-content;
+	border-top: solid 1px;
+}
+
 .btn-primary {
 	--bs-btn-color: #3f220f;
 	--bs-btn-bg: #ffe2c2;
@@ -48,6 +114,23 @@ main {
 	--bs-btn-disabled-color: #3f220f;
 	--bs-btn-disabled-bg: #ffe2c2;
 	--bs-btn-disabled-border-color: #ffe2c2;
+}
+
+.btn-secondary {
+    --bs-btn-color: #ffe2c2;
+    --bs-btn-bg: #3f220f;
+    --bs-btn-border-color: #3f220f;
+    --bs-btn-hover-color: #ffe2c2;
+    --bs-btn-hover-bg: #29180d;
+    --bs-btn-hover-border-color: #29180d;
+    --bs-btn-focus-shadow-rgb: 130, 138, 145;
+    --bs-btn-active-color: #ffe2c2;
+    --bs-btn-active-bg: #29180d;
+    --bs-btn-active-border-color: #29180d;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #ffe2c2;
+    --bs-btn-disabled-bg: #3f220f;
+    --bs-btn-disabled-border-color: #3f220f;
 }
 
 .whatsapp-icon {
