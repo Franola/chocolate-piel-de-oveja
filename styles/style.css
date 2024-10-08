@@ -195,6 +195,10 @@ ul.navegation {
   border-radius: 5px;
 }
 
+.comprar-producto-btn {
+  margin-bottom: 5px;
+}
+
 .footer {
   background-color: #ffe2c2;
   margin: 0px;
