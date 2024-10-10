@@ -76,115 +76,119 @@ productos.push(new Producto(6, "Chocolate 90% cacao", 1500, 50, ["Manteca de cac
 
 const carrito = [];
 
-function agregarProductoAlCarrito(producto) {
-    // Se verifica si existe el producto en el carrito. Si esxiste, se aumenta la cantidad, 
-    // si no, se agrega. Finalmente resta la cantidad del producto en la base de datos
+const carritoListaProductos = document.getElementById("carrito-lista-productos")
+let masCarritoBtns = document.getElementsByClassName("carrito-mas-btn")
+let menosCarritoBtns = document.getElementsByClassName("carrito-menos-btn")
 
-    let existe = false;
-    for (let prod of carrito) {
-        if (prod.id == producto.id) {
-            prod.cantidad++;
-            existe = true;
-            break
-        }
-    }
-
-    if (!existe) {
-        producto.cantidad = 1;
-        carrito.push(producto);
-    }
+function eliminarProductoDelCarrito(producto) {
     
-    for (let i = 0; i < productos.length; i++) {
-        if (productos[i].id == producto.id) {
-            productos[i].cantidad--;
-            break
-        }
-    }
+    if(carrito.some((prod) => prod.id == producto.id)) {
 
-    console.log(productos)
+        const productoCarrito = carrito.find((prod) => prod.id == producto.id)
+        carrito.splice(carrito.indexOf(productoCarrito), 1)
+
+        const divProducto = document.getElementById(`producto-${producto.id}`)
+        divProducto.remove()
+    }
+    else{
+        alert("No se encontro el producto en el carrito")
+    }
+    document.getElementById("valor-total-carrito").innerText = `$ ${calcularMontoTotalCarrito()}`
+}
+
+function agregarProductoAlCarrito(producto, cantidad) {
+    if(carrito.some((prod) => prod.id == producto.id)) {
+        const productoCarrito = carrito.find((prod) => { 
+            if(prod.id == producto.id){
+                prod.cantidad += cantidad
+                return prod
+            }
+        })
+        document.getElementById(`carrito-item-cantidad-${producto.id}`).innerText = productoCarrito.cantidad
+        document.getElementById(`carrito-item-precio-${producto.id}`).innerText = `$ ${productoCarrito.cantidad*productoCarrito.precio}`
+    }
+    else{
+        const div = document.createElement("div")
+        div.classList.add("carrito-item")
+        div.classList.add("row")
+        div.classList.add("gx-0")
+        div.id = `producto-${producto.id}`
+
+        producto.cantidad = cantidad
+        div.innerHTML = `
+            <div class="col-md-4">
+                <img class="carrito-item-img" src="${producto.img}" alt="${producto.nombre}">
+            </div>
+            <div class="col-md-8 row gx-0 align-content-around">
+                <span class="carrito-item-titulo col-md-12">${producto.nombre}</span>
+                <div class="col-md-12 d-flex justify-content-between align-items-center">
+                    <div class="carrito-item-botones d-flex align-items-center">
+                        <button class="btn btn-primary carrito-eliminar-btn d-flex justify-content-center align-items-center" type="button"  name="${producto.id}" id="carrito-eliminar-btn-${producto.id}">
+                            <img class="basura-img" src="../images/icon-eliminar.png" alt="Eliminar">
+                        </button>
+                        <button class="btn btn-primary  carrito-menos-btn d-flex justify-content-center align-items-center" type="button" name="${producto.id}" id="carrito-menos-btn-${producto.id}">
+                            <img class="menos-img" src="../images/icon-menos.png" alt="Eliminar">
+                        </button>
+                        <span class="carrito-item-cantidad" id="carrito-item-cantidad-${producto.id}">${producto.cantidad}</span>
+                        <button class="btn btn-primary carrito-mas-btn d-flex justify-content-center align-items-center" type="button" name="${producto.id}" id="carrito-mas-btn-${producto.id}">
+                            <img class="mas-img" src="../images/icon-mas.png" alt="Eliminar">
+                        </button>
+                    </div>
+                    <span class="carrito-item-precio" id="carrito-item-precio-${producto.id}">$ ${producto.precio*producto.cantidad}</span>
+                </div>
+            </div>
+        `
+        carritoListaProductos.appendChild(div)
+
+        let masCarritoBtn = document.getElementById("carrito-mas-btn-"+producto.id)
+        masCarritoBtn.addEventListener("click", () => {
+            stockProducto = productos.find(producto => producto.id == masCarritoBtn.name).cantidad
+            productoSeleccionado = carrito.find(producto => producto.id == masCarritoBtn.name)
+            if(productoSeleccionado == null || productoSeleccionado.cantidad >= stockProducto) {
+                alert("Producto no disponible")
+            }
+            else{
+                agregarProductoAlCarrito(productoSeleccionado, 1)
+            }
+        })
+
+        let menosCarritoBtn = document.getElementById("carrito-menos-btn-"+producto.id)
+        menosCarritoBtn.addEventListener("click", () => {
+            productoSeleccionado = carrito.find(producto => producto.id == masCarritoBtn.name)
+            if(productoSeleccionado == null) {
+                alert("Producto no disponible")
+            }
+            else if(productoSeleccionado.cantidad <= 1){
+                eliminarProductoDelCarrito(productoSeleccionado)
+            }
+            else{
+                agregarProductoAlCarrito(productoSeleccionado, -1)
+            }
+        })
+
+        let eliminarCarritoBtn = document.getElementById("carrito-eliminar-btn-"+producto.id)
+        eliminarCarritoBtn.addEventListener("click", () => {
+            productoSeleccionado = carrito.find(producto => producto.id == eliminarCarritoBtn.name)
+            if(productoSeleccionado == null) {
+                alert("Producto no disponible")
+            }
+            else{
+                eliminarProductoDelCarrito(productoSeleccionado)
+            }
+        })
+
+        carrito.push(producto)
+    }
+    document.getElementById("valor-total-carrito").innerText = `$ ${calcularMontoTotalCarrito()}`
 }
 
 function calcularMontoTotalCarrito() {
-    // Calcula el monto total de los productos en el carrito
-
     let total = 0
     for (let producto of carrito) {
         total += producto.precio*producto.cantidad
     }
     return total.toFixed(2)
 }
-
-function mostrarProductosDisponibles() {
-    // Muestra los productos disponibles en la base de datos y solicita al usuario
-    // que ingrese el id del producto que desea agregar al carrito
-
-    let mensaje = "Productos disponibles: \n"
-    for (let producto of productos) {
-        if (producto.cantidad > 0) {
-            mensaje += `ID: ${producto.id}\nNombre: ${producto.nombre} - Precio: $${producto.precio}\nCantidad: ${producto.cantidad}\n`
-        }        
-    }
-    mensaje += "\nIngrese el ID del producto que desea agregar al carrito"
-    let id = prompt(mensaje)
-    parseInt(id)
-    return id
-}
-
-function buscarProductoPorId(id) {
-    // Busca un producto en la base de datos por su id y devuelve una copia del producto
-
-    for (let producto of productos) {
-        if (producto.id == id) {
-            let productoEncontrado = new Producto(producto.id, producto.nombre, producto.precio, producto.cantidad, producto.ingredientes, producto.img, producto.html)
-            return productoEncontrado
-        }
-    }
-    return null
-}
-
-function mostrarProductosEnCarrito() {
-    // Comprueba si existen productos en el carrito. Si no hay, muestra un mensaje,
-    // si hay, muestra los productos con su cantidad y precio
-
-    if (carrito.length == 0) {
-        alert("No hay productos en el carrito")
-    } else{
-        let mensaje = "Productos en el carrito: \n"
-        for (let producto of carrito) {
-            mensaje += `\nNombre: ${producto.nombre}\nCantidad: ${producto.cantidad}\nPrecio total: $${(producto.precio*producto.cantidad).toFixed(2)}\n`
-        }
-        mensaje += `\nTotal: $${calcularMontoTotalCarrito()}`
-        alert(mensaje)
-    }
-
-    console.log(carrito)
-}
-
-function simulador() {
-    let continuar = true
-
-    while(continuar) {
-        let id = mostrarProductosDisponibles()
-        if(id == null) { break } // Si el usuario presiona cancelar, se detiene el proceso
-        
-        producto = buscarProductoPorId(id)
-
-        if(producto != null && producto.cantidad > 0) {
-            agregarProductoAlCarrito(producto)
-            continuar = confirm("¿Desea agregar otro producto al carrito?")
-        } else{
-            alert("Producto no disponible")
-            continuar = confirm("¿Desea agregar otro producto al carrito?")
-        }
-    }
-
-    mostrarProductosEnCarrito()
-}
-
-//simulador()
-
-
-/////////////////// ENTREGA 2 ///////////////////
 
 const productosContainer = document.getElementById("productos-container")
 productos.forEach((producto) => {
@@ -203,8 +207,24 @@ productos.forEach((producto) => {
             <a href="${producto.html}">
                 <h2>${producto.nombre}</h2>
             </a>
-            <button class="btn btn-primary comprar-producto-btn" type="button">Añadir al carrito</button>
+            <button class="btn btn-primary comprar-producto-btn" type="button" name="${producto.id}">Añadir al carrito</button>
         </div>
     `
     productosContainer.appendChild(div)
 })
+
+
+const anadirAlCarritoBtns = document.getElementsByClassName("comprar-producto-btn")
+for (let btn of anadirAlCarritoBtns) {
+    btn.addEventListener("click", () => {
+        const productoOriginal = productos.find(producto => producto.id == btn.name);
+        productoSeleccionado = new Producto(productoOriginal.id, productoOriginal.nombre, productoOriginal.precio, productoOriginal.cantidad, productoOriginal.ingredientes, productoOriginal.img, productoOriginal.html)
+        productoSeleccionado.cantidad = 1
+        if(productoSeleccionado == null || productoSeleccionado.cantidad <= 0) {
+            alert("Producto no disponible")
+        }
+        else{
+            agregarProductoAlCarrito(productoSeleccionado, 1)
+        }
+    })
+}
