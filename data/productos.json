@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "nombre": "Chocolate 40% cacao",
+        "precio": 1500,
+        "cantidad": 50,
+        "ingredientes": ["Manteca de cacao", "Miel organica", "Cacao"],
+        "img": "../images/chocolate-40.jpg",
+        "html": "info-producto-cacao-40.html"
+    },
+    {
+        "id": 2,
+        "nombre": "Chocolate 50% cacao",
+        "precio": 1500,
+        "cantidad": 50,
+        "ingredientes": ["Manteca de cacao", "Miel organica", "Cacao"],
+        "img": "../images/chocolate-50.jpg",
+        "html": "info-producto-cacao-50.html"
+    },
+    {
+        "id": 3,
+        "nombre": "Chocolate 60% cacao",
+        "precio": 1500,
+        "cantidad": 50,
+        "ingredientes": ["Manteca de cacao", "Miel organica", "Cacao"],
+        "img": "../images/chocolate-60.jpg",
+        "html": "info-producto-cacao-60.html"
+    },
+    {
+        "id": 4,
+        "nombre": "Chocolate 70% cacao",
+        "precio": 1500,
+        "cantidad": 50,
+        "ingredientes": ["Manteca de cacao", "Miel organica", "Cacao"],
+        "img": "../images/chocolate-70.jpg",
+        "html": "info-producto-cacao-70.html"
+    },
+    {
+        "id": 5,
+        "nombre": "Chocolate 80% cacao",
+        "precio": 1500,
+        "cantidad": 50,
+        "ingredientes": ["Manteca de cacao", "Miel organica", "Cacao"],
+        "img": "../images/chocolate-80.jpg",
+        "html": "info-producto-cacao-80.html"
+    },
+    {
+        "id": 6,
+        "nombre": "Chocolate 90% cacao",
+        "precio": 1500,
+        "cantidad": 50,
+        "ingredientes": ["Manteca de cacao", "Miel organica", "Cacao"],
+        "img": "../images/chocolate-90.jpg",
+        "html": "info-producto-cacao-90.html"
+    }
+]
