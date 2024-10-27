@@ -1,80 +1,93 @@
 class Producto {
-    #id = null
-    #nombre = null
-    #precio = null
-    #cantidad = null
-    #ingredientes = []
-    #img = null
-    #html = null
+    id = null
+    nombre = null
+    precio = null
+    cantidad = null
+    ingredientes = []
+    img = null
+    html = null
 
     constructor(id, nombre, precio, cantidad, ingredientes, img, html) {
-        this.#id = parseInt(id);
-        this.#nombre = nombre;
-        this.#precio = parseFloat(precio).toFixed(2);
-        this.#cantidad = parseInt(cantidad);
-        this.#ingredientes = ingredientes;
-        this.#img = img;
-        this.#html = html;
+        this.id = parseInt(id);
+        this.nombre = nombre;
+        this.precio = parseFloat(precio).toFixed(2);
+        this.cantidad = parseInt(cantidad);
+        this.ingredientes = ingredientes;
+        this.img = img;
+        this.html = html;
 
     }
 
     //Setters
     set id(id) {
-        this.#id = parseInt(id);
+        this.id = parseInt(id);
     }
     set nombre(nombre) {
-        this.#nombre = nombre;
+        this.nombre = nombre;
     }
     set precio(precio) { 
-        this.#precio = parseFloat(precio).toFixed(2);
+        this.precio = parseFloat(precio).toFixed(2);
     }
     set cantidad(cantidad) {
-        this.#cantidad = parseInt(cantidad);
+        this.cantidad = parseInt(cantidad);
     }
     set ingredientes(ingredientes) {
-        this.#ingredientes = ingredientes;
+        this.ingredientes = ingredientes;
     }
     set img(img) {
-        this.#img = img;
+        this.img = img;
     }
     set html(html) {
-        this.#html = html;
+        this.html = html;
     }
 
     // Getters
     get id() {
-        return this.#id;
+        return this.id;
     }
     get nombre() {
-        return this.#nombre;
+        return this.nombre;
     }
     get precio() {
-        return this.#precio;
+        return this.precio;
     }
     get cantidad() {
-        return this.#cantidad;
+        return this.cantidad;
     }
     get ingredientes() {
-        return this.#ingredientes;
+        return this.ingredientes;
     }
     get img() {
-        return this.#img;
+        return this.img;
     }
     get html() {
-        return this.#html;
+        return this.html;
     }
-
+    
 }
 
 let productos = [];
-/*
-productos.push(new Producto(1, "Chocolate 40% cacao", 1500, 50, ["Manteca de cacao", "Miel organica", "Cacao"], "../images/chocolate-40.jpg", "info-producto-cacao-40.html"));
-productos.push(new Producto(2, "Chocolate 50% cacao", 1500, 50, ["Manteca de cacao", "Miel organica", "Cacao"], "../images/chocolate-50.jpg", "info-producto-cacao-50.html"));
-productos.push(new Producto(3, "Chocolate 60% cacao", 1500, 50, ["Manteca de cacao", "Miel organica", "Cacao"], "../images/chocolate-60.jpg", "info-producto-cacao-60.html"));
-productos.push(new Producto(4, "Chocolate 70% cacao", 1500, 50, ["Manteca de cacao", "Miel organica", "Cacao"], "../images/chocolate-70.jpg", "info-producto-cacao-70.html"));
-productos.push(new Producto(5, "Chocolate 80% cacao", 1500, 50, ["Manteca de cacao", "Miel organica", "Cacao"], "../images/chocolate-80.jpg", "info-producto-cacao-80.html"));
-productos.push(new Producto(6, "Chocolate 90% cacao", 1500, 50, ["Manteca de cacao", "Miel organica", "Cacao"], "../images/chocolate-90.jpg", "info-producto-cacao-90.html"));
-*/
+//localStorage.setItem("carrito", JSON.stringify([]));
+let carrito = [];
+const carritoJson = JSON.parse(localStorage.getItem("carrito")) || [];
+console.log("carritoJson: ")
+console.log(carritoJson)
+if(carritoJson.length > 0) {
+    carrito = carritoJson.map(producto => new Producto(producto.id, producto.nombre, producto.precio, producto.cantidad, producto.ingredientes, producto.img, producto.html));
+}
+console.log("carrito: ")
+console.log(carrito)
+
+const carritoListaProductos = document.getElementById("carrito-lista-productos")
+let masCarritoBtns = document.getElementsByClassName("carrito-mas-btn")
+let menosCarritoBtns = document.getElementsByClassName("carrito-menos-btn")
+
+const cargarCarrito = () => {
+    carrito.forEach((producto) => {
+        agregarProductoAlCarrito(producto, producto.cantidad, true)
+    })
+    document.getElementById("valor-total-carrito").innerText = `$ ${calcularMontoTotalCarrito()}`
+}
 
 const renderizarProductos = (productos) => {
     const productosContainer = document.getElementById("productos-container")
@@ -117,31 +130,23 @@ const renderizarProductos = (productos) => {
 }
 
 const cargarProductos = async (url) => {
-    try {
+    //try {
         const res = await fetch(url);
         if (!res.ok) {
-            throw new Error(`ERROR: ${res.ok}`);
+            //throw new Error(`ERROR: ${res.ok}`);
         }
         
         const productosJson = await res.json();
-        console.log(productosJson);
 
         productos = productosJson.map(producto => new Producto(producto.id, producto.nombre, producto.precio, producto.cantidad, producto.ingredientes, producto.img, producto.html));
-        console.log(productos);
 
         renderizarProductos(productos);
+        cargarCarrito();
   
-    } catch (error) {
-      console.error(error.message);
-    }
+    //} catch (error) {
+      //console.error(error.message);
+    //}
 }
-cargarProductos("../data/productos.json");
-
-const carrito = [];
-
-const carritoListaProductos = document.getElementById("carrito-lista-productos")
-let masCarritoBtns = document.getElementsByClassName("carrito-mas-btn")
-let menosCarritoBtns = document.getElementsByClassName("carrito-menos-btn")
 
 function eliminarProductoDelCarrito(producto) {
     
@@ -157,10 +162,11 @@ function eliminarProductoDelCarrito(producto) {
         alert("No se encontro el producto en el carrito")
     }
     document.getElementById("valor-total-carrito").innerText = `$ ${calcularMontoTotalCarrito()}`
+    guardarCarrito();
 }
 
-function agregarProductoAlCarrito(producto, cantidad) {
-    if(carrito.some((prod) => prod.id == producto.id)) {
+function agregarProductoAlCarrito(producto, cantidad, cargaLocalStorage = false) {
+    if(carrito.some((prod) => prod.id == producto.id) && !cargaLocalStorage) {
         const productoCarrito = carrito.find((prod) => { 
             if(prod.id == producto.id){
                 prod.cantidad += cantidad
@@ -240,9 +246,17 @@ function agregarProductoAlCarrito(producto, cantidad) {
             }
         })
 
-        carrito.push(producto)
+        if(!cargaLocalStorage){
+            carrito.push(producto)
+        }
     }
     document.getElementById("valor-total-carrito").innerText = `$ ${calcularMontoTotalCarrito()}`
+
+    console.log(cargaLocalStorage)
+    if(!cargaLocalStorage){
+        console.log("GUARDA CARRITO")
+        guardarCarrito();
+    }
 }
 
 function calcularMontoTotalCarrito() {
@@ -253,7 +267,13 @@ function calcularMontoTotalCarrito() {
     return total.toFixed(2)
 }
 
+const guardarCarrito = () => {
+    console.log(JSON.stringify(carrito))
+    console.log(carrito)
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
 
+cargarProductos("../data/productos.json");
 
 
 
