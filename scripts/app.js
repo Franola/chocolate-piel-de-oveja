@@ -70,13 +70,9 @@ let productos = [];
 //localStorage.setItem("carrito", JSON.stringify([]));
 let carrito = [];
 const carritoJson = JSON.parse(localStorage.getItem("carrito")) || [];
-console.log("carritoJson: ")
-console.log(carritoJson)
 if(carritoJson.length > 0) {
     carrito = carritoJson.map(producto => new Producto(producto.id, producto.nombre, producto.precio, producto.cantidad, producto.ingredientes, producto.img, producto.html));
 }
-console.log("carrito: ")
-console.log(carrito)
 
 const carritoListaProductos = document.getElementById("carrito-lista-productos")
 let masCarritoBtns = document.getElementsByClassName("carrito-mas-btn")
@@ -120,20 +116,27 @@ const renderizarProductos = (productos) => {
             productoSeleccionado = new Producto(productoOriginal.id, productoOriginal.nombre, productoOriginal.precio, productoOriginal.cantidad, productoOriginal.ingredientes, productoOriginal.img, productoOriginal.html)
             productoSeleccionado.cantidad = 1
             if(productoSeleccionado == null || productoSeleccionado.cantidad <= 0) {
-                alert("Producto no disponible")
+                Swal.fire({
+                    title: "Producto no disponible",
+                    icon: "error"
+                });
             }
             else{
                 agregarProductoAlCarrito(productoSeleccionado, 1)
+                Swal.fire({
+                    title: "Producto agregado",
+                    icon: "success"
+                });
             }
         })
     }
 }
 
 const cargarProductos = async (url) => {
-    //try {
+    try {
         const res = await fetch(url);
         if (!res.ok) {
-            //throw new Error(`ERROR: ${res.ok}`);
+            throw new Error(`ERROR: ${res.ok}`);
         }
         
         const productosJson = await res.json();
@@ -143,9 +146,9 @@ const cargarProductos = async (url) => {
         renderizarProductos(productos);
         cargarCarrito();
   
-    //} catch (error) {
-      //console.error(error.message);
-    //}
+    } catch (error) {
+      console.error(error.message);
+    }
 }
 
 function eliminarProductoDelCarrito(producto) {
@@ -214,7 +217,10 @@ function agregarProductoAlCarrito(producto, cantidad, cargaLocalStorage = false)
             stockProducto = productos.find(producto => producto.id == masCarritoBtn.name).cantidad
             productoSeleccionado = carrito.find(producto => producto.id == masCarritoBtn.name)
             if(productoSeleccionado == null || productoSeleccionado.cantidad >= stockProducto) {
-                alert("Producto no disponible")
+                Swal.fire({
+                    title: "Producto no disponible",
+                    icon: "error"
+                });
             }
             else{
                 agregarProductoAlCarrito(productoSeleccionado, 1)
@@ -225,7 +231,10 @@ function agregarProductoAlCarrito(producto, cantidad, cargaLocalStorage = false)
         menosCarritoBtn.addEventListener("click", () => {
             productoSeleccionado = carrito.find(producto => producto.id == masCarritoBtn.name)
             if(productoSeleccionado == null) {
-                alert("Producto no disponible")
+                Swal.fire({
+                    title: "Producto no disponible",
+                    icon: "error"
+                });
             }
             else if(productoSeleccionado.cantidad <= 1){
                 eliminarProductoDelCarrito(productoSeleccionado)
@@ -239,10 +248,25 @@ function agregarProductoAlCarrito(producto, cantidad, cargaLocalStorage = false)
         eliminarCarritoBtn.addEventListener("click", () => {
             productoSeleccionado = carrito.find(producto => producto.id == eliminarCarritoBtn.name)
             if(productoSeleccionado == null) {
-                alert("Producto no disponible")
+                Swal.fire({
+                    title: "Producto no disponible",
+                    icon: "error"
+                });
             }
             else{
-                eliminarProductoDelCarrito(productoSeleccionado)
+                Swal.fire({
+                    title: "¿Estás seguro de eliminar el producto?",
+                    showDenyButton: true,
+                    showCancelButton: false,
+                    confirmButtonText: "Eliminar",
+                    denyButtonText: `Cancelar`
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        eliminarProductoDelCarrito(productoSeleccionado)
+                        Swal.fire("Producto eliminado", "", "success");
+                    }
+                });
+                
             }
         })
 
@@ -252,9 +276,7 @@ function agregarProductoAlCarrito(producto, cantidad, cargaLocalStorage = false)
     }
     document.getElementById("valor-total-carrito").innerText = `$ ${calcularMontoTotalCarrito()}`
 
-    console.log(cargaLocalStorage)
     if(!cargaLocalStorage){
-        console.log("GUARDA CARRITO")
         guardarCarrito();
     }
 }
@@ -268,13 +290,7 @@ function calcularMontoTotalCarrito() {
 }
 
 const guardarCarrito = () => {
-    console.log(JSON.stringify(carrito))
-    console.log(carrito)
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
 cargarProductos("../data/productos.json");
-
-
-
-
